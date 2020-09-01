@@ -1,2 +1,3 @@
 .idea
-.sqlite3
+*.sqlite3
+/unknown-0.0-py38_0.tar.bz2
