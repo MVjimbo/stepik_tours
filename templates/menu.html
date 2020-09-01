@@ -7,8 +7,9 @@
         <ul class="navbar-nav" data-test="navigation">
             {% for key,value in departures.items %}
            <li class="nav-item
-            {% if request.path == "" %}active{% endif %}">
-            <a class="nav-link" href="{%  url 'departure' key %}">{{ value }} </a>
+            {%  url 'departure' key as link %}
+            {% if request.path == link %}active{% endif %}">
+            <a class="nav-link" href="{{ link }}">{{ value }} </a>
           </li>
             {% endfor %}
         </ul>
