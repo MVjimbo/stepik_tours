@@ -1,4 +1,8 @@
+from django.contrib import admin
+from django.urls import path
+
 from tours.views import MainView, DepartureView, TourView, custom_handler404, custom_handler505
+
 
 """stepik_tours URL Configuration
 
@@ -15,13 +19,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
 
 
 handler404 = custom_handler404
 handler500 = custom_handler505
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
