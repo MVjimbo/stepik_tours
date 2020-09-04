@@ -1,6 +1,9 @@
+from random import sample
+
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from django.views import View
+
 from data import tours, departures
 
 
@@ -14,7 +17,10 @@ def custom_handler505(request):
 
 class MainView(View):
     def get(self, request):
-        context = {"tours": tours}
+        k = 6
+        rand_tours_keys = sample(range(1, len(tours) + 1), k)
+        rand_tours = {key: tours.get(key) for key in rand_tours_keys}
+        context = {"tours": rand_tours}
         return render(request, 'index.html', context=context)
 
 
