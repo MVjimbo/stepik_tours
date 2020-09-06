@@ -5,11 +5,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" data-test="navigation">
-            {% for key,value in departures.items %}
+            {% for tour_link,tour_data in departures.items %}
            <li class="nav-item
-            {%  url 'departure' key as link %}
+            {%  url 'departure' tour_link as link %}
             {% if request.path == link %}active{% endif %}">
-            <a class="nav-link" href="{{ link }}">{{ value }} </a>
+            <a class="nav-link" href="{{ link }}">{{ tour_data }} </a>
           </li>
             {% endfor %}
         </ul>

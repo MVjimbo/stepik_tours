@@ -17,8 +17,8 @@ def custom_handler505(request):
 
 class MainView(View):
     def get(self, request):
-        k = 6
-        rand_tours_keys = sample(range(1, len(tours) + 1), k)
+        num_on_page = 6
+        rand_tours_keys = sample(range(1, len(tours) + 1), num_on_page)
         rand_tours = {key: tours.get(key) for key in rand_tours_keys}
         context = {"tours": rand_tours}
         return render(request, 'index.html', context=context)
